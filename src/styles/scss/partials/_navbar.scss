@@ -1,0 +1,165 @@
+// NAVBAR RELATED SCSS
+
+//======= VARIABLES
+@use "./misc/variables" as vars; //GLOBAL VARIABLES
+@use "./misc/keyframes" as keyframes; //GLOBAL KEYFRAMES
+
+/** ------ [ NAVBAR ] ------- **/
+nav {
+  z-index: 9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.093);
+  transition: 0.5s ease;
+
+  //RESPONSIVE
+  @media (max-width: 991px) {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.477);
+  }
+
+  .WRAPPER {
+    height: 100%;
+    width: 100%;
+    max-width: vars.$max-width;
+  }
+
+  .content {
+    padding: 5px 4%;
+    display: flex;
+
+    .navbar-brand {
+      min-width: 100px;
+      height: 60px;
+      padding: 0;
+
+      .logo-img {
+        background: url("/src/imgs/logo.png") center center / cover no-repeat;
+
+        width: 15rem;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 0.5s ease;
+
+        //RESPONSIVE
+        @media (max-width: 700px) {
+          width: 12rem;
+        }
+
+        //---LOGO TEXT
+        // font-weight: bold;
+        // color: white;
+        // font-size: 30px;
+      }
+    }
+
+    .navbar-toggler {
+      background-color: white;
+
+      .navbar-toggler-icon{
+        width: 1.2em;
+      }
+    }
+
+    .navbar-collapse {
+      gap: 10px;
+      transition: 0.2s ease;
+
+      &.show {
+        padding: 20px;
+      }
+
+      .navbar-nav {
+        padding: 5px 10px;
+        width: 100%;
+
+        text-align: center;
+        gap: 30px;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .nav-item {
+          @media (max-width: 991px) {
+            width: 80%;
+            background-color: rgb(0, 0, 0);
+            border-radius: 10px;
+          }
+
+          .nav-link {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: normal;
+
+            color: white;
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-left: 7px;
+            padding-right: 7px;
+
+            width: 100%;
+            transition: 0.2s ease;
+            opacity: 0;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+            &:hover {
+              text-shadow: 0px 2px 20px rgb(255, 255, 255);
+              border-bottom: 3.9px solid white;
+            }
+
+            &.active {
+              font-weight: 600;
+              border-bottom: 3.9px solid white;
+              text-shadow: 0px 2px 20px rgb(0, 0, 0);
+            }
+
+            // ANIMATION / FADE EFFECT
+            //----------------------------------------
+            &.home {
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 0.9s;
+            }
+
+            &.about {
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 1.2s;
+            }
+
+            &.services {
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 1.5s;
+            }
+
+            &.faq {
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 1.7s;
+            }
+
+            &.contact {
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 2s;
+            }
+            //------------------------------------------------
+
+            @media (max-width: 991px) {
+              color: rgb(255, 255, 255);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
