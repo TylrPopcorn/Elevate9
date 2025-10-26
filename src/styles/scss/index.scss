@@ -1,0 +1,26 @@
+/** @ TYLRPOPCORN @ TYLRPOPCORN @ TYLRPOPCORN @ TYLRPOPCORN **/
+/** ------------------------------------------------------- **/
+//THIS IS THE MAIN SCSS FILE.
+
+//USE ALL OTHER PAGES IN MAIN FILE
+@use "partials/misc/variables" as vars;
+
+@use "partials/navbar.scss";
+@use "partials/homepage/homepage.scss"; // HOMEPAGE CSS
+@use "partials/capabilityStatement/capability.scss"; //CAPABILITY STATEMENT CSS
+@use "partials/footer.scss";
+
+/** IMPORTS **/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;900&display=swap");
+
+/** BODY **/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgb(1, 1, 1);
+  font-family: vars.$headerText;
+  scroll-behavior: smooth;
+}
+
