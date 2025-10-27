@@ -1,0 +1,206 @@
+// FOOTER RELATED SCSS
+
+//======= VARIABLES
+@use "./misc/variables" as vars; //GLOBAL VARIABLES
+@use "./misc/keyframes" as keyframes; //GLOBAL KEYFRAMES
+
+/** ------ [ FOOTER ] ------- **/
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 15px;
+
+  .line {
+    height: 0.15rem;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0px 10px rgb(255, 255, 255);
+  }
+
+  .WRAPPER {
+    height: 100%;
+    width: 100%;
+    max-width: vars.$max-width;
+    padding: 10px 0px;
+  }
+
+  .content {
+    padding: 5px 8%;
+    gap: 10px;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      color: white;
+      min-width: 250px;
+
+      .section-title {
+        font-weight: 600;
+        font-size: 20px;
+        text-shadow: 0px 2px 15px rgba(255, 255, 255, 0.696);
+      }
+
+      // --------- LOGO
+      &.logo {
+        .logo-icon {
+          background: url("/src/imgs/logo.png") center center/cover;
+          width: 12rem;
+          height: 3.5rem;
+        }
+
+        .socials {
+          display: flex;
+          gap: 10px;
+          padding-left: 20px;
+
+          .social {
+            background-color: white;
+            height: 1.5rem;
+            width: 1.5rem;
+            transition: 0.2s ease;
+
+            &.fb {
+              background: url("/src/imgs/facebook.png") center center/cover;
+            }
+
+            &.ig {
+              background: url("/src/imgs/instagram.png") center center/cover;
+
+              opacity: 0; //TODO Set to 1 when a link is available.
+            }
+
+            &.li {
+              background: url("/src/imgs/linkedin.png") center center/cover;
+            }
+
+            &:hover {
+              box-shadow: 0 2px 15px rgb(255, 255, 255);
+            }
+          }
+        }
+
+        .copyright {
+          font-family: vars.$headerText;
+          font-size: 13px;
+
+          margin-top: 20px;
+          opacity: 0.7;
+
+          padding-left: 20px;
+        }
+      }
+
+      // --------- COMPANY
+      &.company {
+        gap: 5px;
+        font-family: vars.$headerText;
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .link_ {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            opacity: 0.8;
+            transition: 0.3s ease;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      // --------- CONTACT
+      &.contact {
+        .cntct-section {
+          width: 100%;
+
+          .content {
+            padding: 3px;
+            a {
+              font-size: 15px;
+              transition: 0.3s ease;
+              opacity: 0.8;
+
+              text-decoration: none;
+              color: white;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      // --------- CONTACT
+      &.terms {
+        .privacyPolicy {
+          transition: 0.3s ease;
+
+          opacity: 0.8;
+          text-decoration: none;
+          color: white;
+          font-size: 15px;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      // --------- SUBSCRIBE
+      &.subscribe {
+        .section-title {
+          line-height: 1.4;
+          font-size: 19px;
+        }
+
+        .subscribe-form {
+          padding: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          input {
+            color: black;
+            font-family: vars.$headerText;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 0px;
+            background-color: rgb(231, 231, 231);
+          }
+
+          button {
+            margin-left: -5px;
+            height: 100%;
+            border: none;
+            background-color: rgb(231, 231, 231);
+          }
+        }
+
+        .desc {
+          opacity: 0.8;
+          font-size: 13px;
+        }
+      }
+
+      //RESPONSIVE
+      @media (max-width: 1300px) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+
