@@ -1,0 +1,119 @@
+/**/
+/** ------ [ GLOBAL KEYFRAMES ] ------- **/
+
+// MOVE IN TEXT LEFT
+@keyframes MoveInFromLeft {
+  //Will fade-in an object from left
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+//
+//
+
+// MOVE IN TEXT LEFT
+@keyframes MoveInFromRight {
+  //Will fade-in an object from right
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+//
+//
+
+// ARROW HERO SECTION EFFECT
+@keyframes arrowHero {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); // start below screen
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0); // move into position
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0); // stay in place
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%); // exit out top
+  }
+}
+
+//
+//
+
+// FADE IN EFFECT
+@keyframes fadeIn {
+  //Will fade-in an object
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//
+//
+
+@keyframes fadeIn_SLIGHTLY {
+  //Will fade-in an object slightly
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+//
+//
+
+// FADE OUT EFFECT
+@keyframes fadeOut {
+  //Will fade-in an object
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+//
+//
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.308);
+  }
+  to {
+    text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.596);
+  }
+}
+
+//
+//
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+//
+//
+
+/**/
