@@ -1,0 +1,29 @@
+// HOMEPAGE RELATED SCSS
+
+//====== SECTIONS OF PAGE
+@use "./partials/hero" as hero;
+@use "./partials/aboutUs" as aboutUs;
+@use "./partials/services" as services;
+@use "./partials/faq" as faq;
+@use "./partials/cta" as cta;
+@use "./partials/contact.scss" as contact;
+
+/** ------ [ HOMEPAGE ] ------- **/
+.Homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// Hero Section
+@include hero.Hero-Content;
+// About Us Section
+@include aboutUs.AboutUs-Content;
+// Services Section
+@include services.Services-Content;
+// FAQ Section
+@include faq.FAQ-Content;
+// CTA Section
+@include cta.CTA-Content;
+// Contact Us Section
+@include contact.ContactUs-Content;
