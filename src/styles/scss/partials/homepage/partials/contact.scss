@@ -1,0 +1,232 @@
+//CONTACT US SECTION -> HOMEPAGE RELATED
+
+//======= VARIABLES
+@use "../../misc/variables" as vars; //GLOBAL VARIABLES
+@use "../../misc/keyframes" as keyframes; //GLOBAL KEYFRAMES
+
+@mixin ContactUs-Content {
+  /** ------ [ CONTACT US SECTION ] ------- **/
+  .Contact-Us-Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    // height: 100vh;
+    min-height: 800px;
+    // max-height: 1200px;
+
+    .WRAPPER {
+      position: relative;
+
+      height: 100%;
+      width: 100%;
+      max-width: vars.$max-width;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .img {
+      height: 100%;
+      width: 100%;
+      background: url("/src/imgs/ContactUs.png") center center / cover;
+      padding: 180px 8%;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .backgroundFX {
+      //BACKGROUND EFFECT
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0);
+      opacity: 1;
+      z-index: 2;
+
+      //animation
+      animation: fadeOut 1s ease-out forwards;
+      animation-delay: 7.2s;
+      pointer-events: none;
+    }
+
+    .sidePiece {
+      position: absolute;
+      width: 4vw;
+      max-width: 50px;
+      min-width: 50px;
+      height: 40vw;
+      max-height: 450px;
+      min-height: 450px;
+      right: -25px;
+      top: -15%;
+      z-index: 2;
+      background: url("/src/imgs/Side-Piece-2.png") center center / cover;
+
+      opacity: 0;
+      animation: MoveInFromRight 0.6s ease-out forwards,
+        fadeIn 0.3s ease-out forwards;
+      animation-delay: 9s;
+
+      @media (max-width: 650px) {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
+    .content-section {
+      width: 80%;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 50px;
+
+      color: white;
+      font-family: vars.$headerText;
+
+      .header-section {
+        width: 70%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0px;
+
+        color: white;
+
+        .header {
+          font-weight: 700;
+          font-size: clamp(30px, 5vw, 39px);
+          text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.696);
+
+          //animation
+          transition: 0.2s ease;
+          opacity: 0;
+          animation: MoveInFromLeft 1s ease-out forwards,
+            fadeIn 1s ease-out forwards;
+          animation-delay: 7.4s;
+        }
+
+        .desc {
+          font-size: clamp(20px, 3vw, 21px);
+          opacity: 0.8;
+
+          min-width: 300px;
+          padding: 5px 10px;
+
+          //animation
+          transition: 0.2s ease;
+          opacity: 0;
+          animation: MoveInFromLeft 1s ease-out forwards,
+            fadeIn_SLIGHTLY 1s ease-out forwards;
+          animation-delay: 7.5s;
+        }
+      }
+
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        form {
+          background: rgba(133, 133, 133, 0.336);
+
+          border-radius: 13px;
+          padding: 30px;
+          max-width: 600px;
+          min-width: 350px;
+          width: 90%;
+
+          backdrop-filter: blur(7px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 2px solid rgba(255, 255, 255, 0.733);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 15px;
+
+          font-family: vars.$headerText;
+          label {
+            font-size: clamp(12px, 3vw, 20px);
+            color: #fff;
+            padding-left: 5px;
+            text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.6);
+          }
+
+          input,
+          textarea {
+            width: 100%;
+
+            padding: 12px 15px;
+            border-radius: 5px;
+
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.658);
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+
+            font-size: clamp(12px, 3vw, 15px);
+            color: black;
+            font-weight: 500;
+
+            &::placeholder {
+              color: rgba(0, 0, 0, 0.9);
+              font-weight: 500;
+            }
+          }
+
+          textarea {
+            resize: none;
+            min-height: 120px;
+          }
+
+          button {
+            align-self: center;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.477);
+            border: 1px solid rgb(180, 180, 180);
+
+            margin-top: 20px;
+            width: 40%;
+            max-width: 300px;
+            min-width: 150px;
+
+            border-radius: 900px;
+            padding: 10px 30px;
+
+            font-size: clamp(13px, 1vw, 17px);
+            font-weight: 600;
+            font-family: vars.$headerText;
+
+            //animation
+            transition: 0.5s ease;
+
+            &:hover {
+              background-color: rgb(255, 255, 255);
+              color: rgb(0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
