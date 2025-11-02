@@ -1,0 +1,228 @@
+//SERVICE SECTION -> HOMEPAGE RELATED
+
+//======= VARIABLES
+@use "../../misc/variables" as vars; //GLOBAL VARIABLES
+@use "../../misc/keyframes" as keyframes; //GLOBAL KEYFRAMES
+
+@mixin Services-Content {
+  /** ------ [ SERVICES SECTION ] ------- **/
+  .Services-Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 800px;
+
+    .WRAPPER {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      max-width: vars.$max-width;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .img {
+        height: 100%;
+        width: 100%;
+        background: url("/src/imgs/Services.png") center center / cover;
+        padding: 230px 8%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+      }
+
+      .backgroundFX {
+        //BACKGROUND EFFECT
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        opacity: 1;
+        z-index: 2;
+
+        //animation
+        animation: fadeOut 1s ease-out forwards;
+        animation-delay: 3.9s;
+        pointer-events: none;
+      }
+
+      .sidePiece {
+        position: absolute;
+        width: 4vw;
+        max-width: 50px;
+        min-width: 50px;
+        height: 40vw;
+        max-height: 450px;
+        min-height: 450px;
+        right: -25px;
+        bottom: -15%;
+        z-index: 2;
+        background: url("/src/imgs/Side-Piece-2.png") center center / cover;
+
+        opacity: 0;
+        animation: MoveInFromRight 0.6s ease-out forwards,
+          fadeIn 0.3s ease-out forwards;
+        animation-delay: 7s;
+
+        @media (max-width: 650px) {
+          animation: none;
+          opacity: 0;
+        }
+      }
+
+      .content-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        font-family: vars.$headerText;
+
+        .header-section {
+          width: 70%;
+
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 0px;
+
+          color: white;
+
+          .header {
+            font-weight: 700;
+            font-size: clamp(30px, 5vw, 39px);
+            text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.696);
+
+            //animation
+            transition: 0.2s ease;
+            opacity: 0;
+            animation: MoveInFromLeft 1s ease-out forwards,
+              fadeIn 1s ease-out forwards;
+            animation-delay: 4.1s;
+          }
+
+          .desc {
+            font-size: clamp(20px, 3vw, 21px);
+            opacity: 0.8;
+            padding: 5px 10px;
+            min-width: 400px;
+
+            //animation
+            transition: 0.2s ease;
+            opacity: 0;
+            animation: MoveInFromLeft 1s ease-out forwards,
+              fadeIn_SLIGHTLY 1s ease-out forwards;
+            animation-delay: 4.3s;
+          }
+        }
+
+        .services {
+          color: white;
+          gap: 20px;
+
+          font-family: vars.$headerText;
+          width: 100%;
+          margin-bottom: 30px;
+
+          @media (max-width: 680px) {
+            width: 83%;
+          }
+
+          .item {
+            background-color: rgba(150, 150, 150, 0.555);
+
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgb(255, 255, 255);
+
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+
+            min-width: 285px;
+            padding: 25px 15px;
+
+            //animation
+            transition: 0.2s ease;
+            opacity: 0;
+            animation: fadeIn_SLIGHTLY 1s ease-out forwards;
+            animation-delay: 4.4s;
+
+            @media (max-width: 680px) {
+              padding: 15px 10px;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              background-color: rgba(255, 255, 255, 0.349);
+            }
+
+            .service-img {
+              height: 6rem;
+              width: 6rem;
+
+              &.service1 {
+                background: url("/src/imgs/service-1.png") center center / cover;
+              }
+
+              &.service2 {
+                background: url("/src/imgs/service-2.png") center center / cover;
+              }
+
+              &.service3 {
+                background: url("/src/imgs/service-3.png") center center / cover;
+              }
+
+              &.service4 {
+                background: url("/src/imgs/service-4.png") center center / cover;
+              }
+
+              //RESPONSIVE
+              transition: 0.4s ease;
+              @media (max-width: 650px) {
+                height: 4.5rem;
+                width: 4.5rem;
+              }
+            }
+
+            .service-heading {
+              font-weight: 600;
+              font-size: clamp(18px, 3vw, 20px);
+              text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.8);
+
+              margin: 0;
+            }
+
+            .service-desc {
+              font-size: clamp(17px, 3vw, 18px);
+              line-height: 1.6;
+              text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
