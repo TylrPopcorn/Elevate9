@@ -1,0 +1,145 @@
+//CTA SECTION -> HOMEPAGE RELATED
+
+//======= VARIABLES
+@use "../../misc/variables" as vars; //GLOBAL VARIABLES
+@use "../../misc/keyframes" as keyframes; //GLOBAL KEYFRAMES
+
+@mixin CTA-Content {
+  /** ------ [ CTA SECTION ] ------- **/
+  .CTA-Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    min-height: 800px;
+    max-height: 1200px;
+
+    .WRAPPER {
+      position: relative;
+
+      height: 100%;
+      width: 100%;
+      max-width: vars.$max-width;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .img {
+        height: 100%;
+        width: 100%;
+        background: url("/src/imgs/CTA.png") center center / cover;
+        padding: 200px 8%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+      }
+
+      .backgroundFX {
+        //BACKGROUND EFFECT
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        opacity: 1;
+        z-index: 2;
+
+        //animation
+        animation: fadeOut 1s ease-out forwards;
+        animation-delay: 6s;
+        pointer-events: none;
+      }
+
+      .sidePiece {
+        position: absolute;
+        width: 4vw;
+        max-width: 50px;
+        min-width: 50px;
+        height: 40vw;
+        max-height: 450px;
+        min-height: 450px;
+        left: -25px;
+        top: -15%;
+        z-index: 2;
+        background: url("/src/imgs/Side-Piece-1.png") center center / cover;
+
+        opacity: 0;
+        animation: MoveInFromLeft 0.6s ease-out forwards,
+          fadeIn 0.2s ease-out forwards;
+        animation-delay: 8.3s;
+
+        @media (max-width: 650px) {
+          animation: none;
+          opacity: 0;
+        }
+      }
+
+      .content-section {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        color: white;
+        font-family: vars.$headerText;
+
+        gap: 50px;
+
+        .header {
+          font-weight: 700;
+          font-size: clamp(40px, 5vw, 50px);
+          text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.8);
+
+          //animation
+          transition: 0.2s ease;
+          opacity: 0;
+          animation: MoveInFromLeft 1s ease-out forwards,
+            fadeIn 1s ease-out forwards, grow 1.5s ease-out forwards;
+          animation-delay: 6.4s;
+        }
+
+        .cta-button-wrapper {
+          width: 50%;
+          max-width: 300px;
+          min-width: 200px;
+        }
+
+        .cta-button {
+          background-color: rgb(0, 0, 0);
+          color: rgb(255, 255, 255);
+          box-shadow: 0 8px 20px rgba(255, 255, 255, 0.477);
+          border: 1px solid rgb(180, 180, 180);
+
+          border-radius: 900px;
+          padding: 10px 55px;
+
+          font-size: clamp(15px, 2.2vw, 20px);
+          font-weight: 600;
+          font-family: vars.$headerText;
+
+          //animation
+          transition: 0.5s ease;
+          opacity: 0;
+          animation: MoveInFromLeft 1s ease-out forwards,
+            fadeIn 1s ease-out forwards;
+          animation-delay: 6.8s;
+
+          &:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}
+
