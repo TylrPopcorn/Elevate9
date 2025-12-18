@@ -1,5 +1,5 @@
 # Elevate9
-A fully responsive and modern website, designed using Figma and built with React, SCSS, Bootstrap, and JavaScript to deliver a sleek UI, smooth performance, and cross-device compatibility.
+A modern, fully responsive web experience designed in Figma and developed with React, SCSS, Bootstrap, and JavaScript, delivering a polished interface, fast interactions, and seamless performance across all devices.
 
 Live: 
 
