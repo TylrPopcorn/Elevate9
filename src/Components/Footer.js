@@ -123,6 +123,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
+         </div>
           {/**-----------------**/}
           <div className="item contact subscribe col">
             <h3 className="section-title">
