@@ -116,20 +116,13 @@ export default function Footer() {
               <h3 className="section-title">Contact</h3>
               <div className="content">
                 <p className="email">
-                  <a href="mailto:info@elevate9inc.com">info@elevate9inc.com</a>
+                  <a href="">info@yourcompany.com</a>
                 </p>
                 <p className="phone">
-                  <a href="tel:+12144929754">(214) 492-9754</a>
+                  <a href="">(XXX) XXX-XXXX</a>
                 </p>
               </div>
             </div>
-            <div className="terms-section">
-              <h3 className="section-title">Terms</h3>
-            <a href="#Privacy" className="privacyPolicy">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
           {/**-----------------**/}
           <div className="item contact subscribe col">
             <h3 className="section-title">
