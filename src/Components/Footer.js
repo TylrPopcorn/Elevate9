@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="socials">
               {/**-----FACEBOOK------*/}
               <a
-                href="https://www.facebook.com/people/Elevate9/61569202981801/"
+                href="https://github.com/TylrPopcorn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -54,7 +54,7 @@ export default function Footer() {
               </a>
               {/**------LINKEDIN------*/}
               <a
-                href="https://www.linkedin.com/company/elevatenine/"
+                href="https://github.com/TylrPopcorn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -132,7 +132,7 @@ export default function Footer() {
             <form
               class="subscribe-form"
               method="POST"
-              action="https://formsubmit.co/aa57bffabc0a6e03bd24cb186e429af0"
+              action=""
               target="_blank"
               onSubmit={handleSubmit}
             >
