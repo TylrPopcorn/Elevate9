@@ -17,7 +17,7 @@ export default function AboutUs() {
                 values. We build in-house, diverse teams who bring creativity,
                 integrity, and excellence to everything we do.
               </p>
-             <a href="#CapabilityStatement">
+             <a href="">
                 <button className="capabilityButton">Our Capabilities</button>
               </a>
             </div>
